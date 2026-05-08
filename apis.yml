@@ -1,0 +1,29 @@
+aid: kustomer
+url: https://raw.githubusercontent.com/api-evangelist/kustomer/refs/heads/main/apis.yml
+name: Kustomer
+x-type: company
+description: >-
+  Kustomer (acquired by Meta) is an omnichannel customer service platform combining a customer record CRM with conversations across email, chat, voice, SMS, and social channels.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Customer Support
+  - CX
+  - Omnichannel
+  - CRM
+  - AI
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://www.kustomer.com/
+  - type: Plans
+    url: plans/kustomer-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/kustomer-rate-limits.yml
+  - type: FinOps
+    url: finops/kustomer-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
