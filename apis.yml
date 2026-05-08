@@ -3,21 +3,39 @@ url: https://raw.githubusercontent.com/api-evangelist/kustomer/refs/heads/main/a
 name: Kustomer
 x-type: company
 description: >-
-  Kustomer (acquired by Meta) is an omnichannel customer service platform combining a customer record CRM with conversations across email, chat, voice, SMS, and social channels.
+  Kustomer is an AI-powered customer service CRM that unifies conversations, customer data, automation, and reporting across channels.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Customer Support
-  - CX
-  - Omnichannel
+  - Customer Service
   - CRM
+  - Helpdesk
+  - Messaging
   - AI
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: kustomer:kustomer-api
+    name: Kustomer REST API
+    description: >-
+      Kustomer REST API for customers, conversations, messages, KObjects, queues, teams, users, workflows, search, and analytics. Supports v1 and v2 endpoints with bearer-token authentication.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.kustomer.com/kustomer-api-docs/reference
+    baseURL: https://api.kustomerapp.com
+    tags:
+      - Customer Service
+      - CRM
+      - REST
+    properties:
+      - type: Documentation
+        url: https://developer.kustomer.com/kustomer-api-docs/reference
+      - type: Authentication
+        url: https://developer.kustomer.com/kustomer-api-docs/reference/authentication
 common:
   - type: Website
     url: https://www.kustomer.com/
+  - type: Documentation
+    url: https://developer.kustomer.com/kustomer-api-docs/reference
   - type: Plans
     url: plans/kustomer-plans-pricing.yml
   - type: RateLimits

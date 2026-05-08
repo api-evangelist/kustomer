@@ -1,6 +1,6 @@
 # Kustomer (kustomer)
 
-Kustomer (acquired by Meta) is an omnichannel customer service platform combining a customer record CRM with conversations across email, chat, voice, SMS, and social channels.
+Kustomer is an AI-powered customer service CRM that unifies conversations, customer data, automation, and reporting across channels.
 
 **URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/kustomer/refs/heads/main/apis.yml)
 
@@ -10,14 +10,23 @@ Kustomer (acquired by Meta) is an omnichannel customer service platform combinin
 - **x-type:** company
 
 ## Tags:
- - Customer Support, CX, Omnichannel, CRM, AI
+ - Customer Service, CRM, Helpdesk, Messaging, AI
 
 ## Timestamps
 - **Created:** 2026-05-08
 - **Modified:** 2026-05-08
 
+## APIs
+
+### Kustomer REST API
+Kustomer REST API for customers, conversations, messages, KObjects, queues, teams, users, workflows, search, and analytics. Supports v1 and v2 endpoints with bearer-token authentication.
+
+- **Human URL:** https://developer.kustomer.com/kustomer-api-docs/reference
+- **Base URL:** https://api.kustomerapp.com
+
 ## Common Properties
 - [Website](https://www.kustomer.com/)
+- [Documentation](https://developer.kustomer.com/kustomer-api-docs/reference)
 - [Plans](plans/kustomer-plans-pricing.yml) — placeholder, pipeline reconciles later
 - [RateLimits](rate-limits/kustomer-rate-limits.yml) — placeholder
 - [FinOps](finops/kustomer-finops.yml) — FOCUS-aligned placeholder
