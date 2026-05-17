@@ -1,7 +1,7 @@
 aid: kustomer
 url: https://raw.githubusercontent.com/api-evangelist/kustomer/refs/heads/main/apis.yml
 name: Kustomer
-x-type: company
+kind: company
 description: >-
   Kustomer is an AI-powered customer service CRM that unifies conversations, customer data, automation, and reporting across channels.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
