@@ -32,6 +32,10 @@ apis:
       - type: Authentication
         url: https://developer.kustomer.com/kustomer-api-docs/reference/authentication
 common:
+  - type: GitHubOrganization
+    url: https://github.com/kustomer
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/kustomer
   - type: Website
     url: https://www.kustomer.com/
   - type: Documentation
