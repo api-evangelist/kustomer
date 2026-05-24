@@ -1,0 +1,145 @@
+openapi: 3.1.0
+info:
+  title: Kustomer REST API
+  description: >-
+    Kustomer is an AI-powered customer service CRM. The REST API exposes
+    resources such as customers and conversations, allowing programmatic
+    integration with the Kustomer platform. Authentication uses a bearer
+    token in the Authorization header.
+  version: '1.0'
+  contact:
+    name: Kustomer Developer Portal
+    url: https://developer.kustomer.com/kustomer-api-docs/reference
+servers:
+  - url: https://api.kustomerapp.com
+    description: Kustomer API production base URL
+security:
+  - bearerAuth: []
+tags:
+  - name: Customers
+    description: Customer records in Kustomer
+  - name: Conversations
+    description: Conversation threads with customers
+paths:
+  /v1/customers:
+    post:
+      tags:
+        - Customers
+      operationId: createCustomer
+      summary: Create a customer
+      description: Create a new customer record in Kustomer.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerCreate'
+      responses:
+        '200':
+          description: Customer created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+        '401':
+          description: Missing or invalid bearer token
+        '422':
+          description: Validation error
+  /v1/conversations:
+    post:
+      tags:
+        - Conversations
+      operationId: createConversation
+      summary: Create a conversation
+      description: Create a new conversation associated with a customer.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConversationCreate'
+      responses:
+        '200':
+          description: Conversation created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConversationResponse'
+        '401':
+          description: Missing or invalid bearer token
+        '422':
+          description: Validation error
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: >-
+        Provide an API key issued from Settings > Security > API Keys in the
+        Kustomer console. Header format: `Authorization: Bearer {API_KEY}`.
+  schemas:
+    CustomerCreate:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Customer display name
+        emails:
+          type: array
+          items:
+            type: object
+            properties:
+              email:
+                type: string
+                format: email
+              type:
+                type: string
+        phones:
+          type: array
+          items:
+            type: object
+            properties:
+              phone:
+                type: string
+              type:
+                type: string
+        externalId:
+          type: string
+          description: Identifier for the customer in your system
+    CustomerResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          example: customer
+        id:
+          type: string
+        attributes:
+          type: object
+          additionalProperties: true
+    ConversationCreate:
+      type: object
+      properties:
+        customer:
+          type: string
+          description: Customer ID this conversation belongs to
+        name:
+          type: string
+          description: Subject or short name of the conversation
+        channel:
+          type: string
+          description: Channel of the conversation (for example email, chat, sms)
+        status:
+          type: string
+          description: Status such as open, snoozed, done
+    ConversationResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          example: conversation
+        id:
+          type: string
+        attributes:
+          type: object
+          additionalProperties: true
