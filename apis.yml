@@ -12,7 +12,7 @@ tags:
   - Messaging
   - AI
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-05-30'
 specificationVersion: '0.19'
 apis:
   - aid: kustomer:kustomer-api
@@ -31,6 +31,10 @@ apis:
         url: https://developer.kustomer.com/kustomer-api-docs/reference
       - type: Authentication
         url: https://developer.kustomer.com/kustomer-api-docs/reference/authentication
+      - type: OpenAPI
+        url: openapi/kustomer-openapi.yml
+      - type: AsyncAPI
+        url: asyncapi/kustomer-webhooks-asyncapi.yml
 common:
   - type: GitHubOrganization
     url: https://github.com/kustomer

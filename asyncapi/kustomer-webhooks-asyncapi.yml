@@ -1,0 +1,389 @@
+asyncapi: 2.6.0
+info:
+  title: Kustomer Outbound Webhook Events
+  description: >-
+    Kustomer's outbound webhook surface delivers event notifications when
+    resources in a Kustomer organization are created or updated. Apps subscribe
+    to a configured array of event names in their app definition (or via the
+    Outbound Webhooks API) and supply a destination URL plus optional custom
+    headers. Kustomer POSTs a JSON Kustomer Event envelope to that URL whenever
+    a subscribed event fires. Event payloads contain a snapshot of the affected
+    resource under `data` and, for updates, a JSON-Patch style `changes` object
+    describing what was modified. Kustomer retries failed deliveries
+    approximately ten times over an eighty-minute window; if every attempt
+    fails the webhook is automatically disabled and must be manually
+    re-enabled. Only the documented event types listed in this specification
+    are confirmed by Kustomer's public developer documentation.
+  version: '1.0'
+  contact:
+    name: Kustomer Developer Portal
+    url: https://developer.kustomer.com/kustomer-apps-platform/docs/outbound-webhooks
+  license:
+    name: Proprietary
+  externalDocs:
+    description: Kustomer Outbound Webhooks documentation
+    url: https://developer.kustomer.com/kustomer-apps-platform/docs/outbound-webhooks
+defaultContentType: application/json
+servers:
+  subscriber:
+    url: '{webhookUrl}'
+    protocol: https
+    description: >-
+      The HTTPS endpoint that Kustomer POSTs outbound webhook events to. The
+      destination URL is configured per webhook in the Kustomer app definition
+      or via the Outbound Webhooks API and is limited to 255 characters.
+    variables:
+      webhookUrl:
+        description: >-
+          The full HTTPS URL of the subscriber's webhook endpoint as registered
+          with Kustomer.
+channels:
+  customer.create:
+    description: >-
+      Channel for `kustomer.customer.create` events, fired when a customer
+      record is created in the Kustomer organization.
+    subscribe:
+      operationId: onCustomerCreate
+      summary: Receive a customer.create event
+      description: >-
+        Kustomer publishes a `kustomer.customer.create` event to subscribed
+        webhooks whenever a new customer record is created. The payload
+        includes a full snapshot of the new customer under `data`.
+      message:
+        $ref: '#/components/messages/CustomerCreate'
+  customer.update:
+    description: >-
+      Channel for `kustomer.customer.update` events, fired when a customer
+      record is modified.
+    subscribe:
+      operationId: onCustomerUpdate
+      summary: Receive a customer.update event
+      description: >-
+        Kustomer publishes a `kustomer.customer.update` event whenever a
+        customer record is changed. The payload includes the updated snapshot
+        under `data` and a JSON-Patch style `changes` object describing the
+        before and after state of modified attributes and relationships.
+      message:
+        $ref: '#/components/messages/CustomerUpdate'
+  conversation.create:
+    description: >-
+      Channel for `kustomer.conversation.create` events, fired when a new
+      conversation is created.
+    subscribe:
+      operationId: onConversationCreate
+      summary: Receive a conversation.create event
+      description: >-
+        Kustomer publishes a `kustomer.conversation.create` event when a new
+        conversation thread is created in the organization. The payload
+        includes a snapshot of the conversation under `data`.
+      message:
+        $ref: '#/components/messages/ConversationCreate'
+  conversation.update:
+    description: >-
+      Channel for `kustomer.conversation.update` events, fired when an existing
+      conversation is modified.
+    subscribe:
+      operationId: onConversationUpdate
+      summary: Receive a conversation.update event
+      description: >-
+        Kustomer publishes a `kustomer.conversation.update` event whenever a
+        conversation thread is modified, including status, assignee, tags, or
+        other attribute changes. The payload includes the updated snapshot
+        under `data` and a JSON-Patch style `changes` object describing the
+        modifications.
+      message:
+        $ref: '#/components/messages/ConversationUpdate'
+  message.create:
+    description: >-
+      Channel for `kustomer.message.create` events, fired when a new message is
+      created within a conversation.
+    subscribe:
+      operationId: onMessageCreate
+      summary: Receive a message.create event
+      description: >-
+        Kustomer publishes a `kustomer.message.create` event when a new message
+        is created on a conversation, regardless of channel. The payload
+        includes a snapshot of the message under `data`.
+      message:
+        $ref: '#/components/messages/MessageCreate'
+  message.update:
+    description: >-
+      Channel for `kustomer.message.update` events, fired when an existing
+      message is modified.
+    subscribe:
+      operationId: onMessageUpdate
+      summary: Receive a message.update event
+      description: >-
+        Kustomer publishes a `kustomer.message.update` event when an existing
+        message is modified. The payload includes the updated message snapshot
+        under `data` and a JSON-Patch style `changes` object describing the
+        modifications.
+      message:
+        $ref: '#/components/messages/MessageUpdate'
+  user.create:
+    description: >-
+      Channel for `kustomer.user.create` events, fired when a new agent or
+      admin user is created in the organization.
+    subscribe:
+      operationId: onUserCreate
+      summary: Receive a user.create event
+      description: >-
+        Kustomer publishes a `kustomer.user.create` event when a new user is
+        added to the organization. The payload includes a snapshot of the user
+        under `data`.
+      message:
+        $ref: '#/components/messages/UserCreate'
+  user.update:
+    description: >-
+      Channel for `kustomer.user.update` events, fired when a user record is
+      modified.
+    subscribe:
+      operationId: onUserUpdate
+      summary: Receive a user.update event
+      description: >-
+        Kustomer publishes a `kustomer.user.update` event when an existing user
+        is modified. The payload includes the updated user snapshot under
+        `data` and a JSON-Patch style `changes` object describing the
+        modifications.
+      message:
+        $ref: '#/components/messages/UserUpdate'
+  team.create:
+    description: >-
+      Channel for `kustomer.team.create` events, fired when a new team is
+      created in the organization.
+    subscribe:
+      operationId: onTeamCreate
+      summary: Receive a team.create event
+      description: >-
+        Kustomer publishes a `kustomer.team.create` event when a new team is
+        created. The payload includes a snapshot of the team under `data`.
+      message:
+        $ref: '#/components/messages/TeamCreate'
+  team.update:
+    description: >-
+      Channel for `kustomer.team.update` events, fired when a team record is
+      modified.
+    subscribe:
+      operationId: onTeamUpdate
+      summary: Receive a team.update event
+      description: >-
+        Kustomer publishes a `kustomer.team.update` event when an existing team
+        is modified. The payload includes the updated team snapshot under
+        `data` and a JSON-Patch style `changes` object describing the
+        modifications.
+      message:
+        $ref: '#/components/messages/TeamUpdate'
+components:
+  messages:
+    CustomerCreate:
+      name: kustomer.customer.create
+      title: Customer Create
+      summary: >-
+        Delivered when a customer record is created in a Kustomer
+        organization.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/KustomerEvent'
+    CustomerUpdate:
+      name: kustomer.customer.update
+      title: Customer Update
+      summary: >-
+        Delivered when a customer record is modified in a Kustomer
+        organization.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/KustomerEvent'
+    ConversationCreate:
+      name: kustomer.conversation.create
+      title: Conversation Create
+      summary: >-
+        Delivered when a conversation is created in a Kustomer organization.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/KustomerEvent'
+    ConversationUpdate:
+      name: kustomer.conversation.update
+      title: Conversation Update
+      summary: >-
+        Delivered when a conversation is modified in a Kustomer organization.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/KustomerEvent'
+    MessageCreate:
+      name: kustomer.message.create
+      title: Message Create
+      summary: >-
+        Delivered when a new message is added to a conversation.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/KustomerEvent'
+    MessageUpdate:
+      name: kustomer.message.update
+      title: Message Update
+      summary: >-
+        Delivered when an existing message is modified.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/KustomerEvent'
+    UserCreate:
+      name: kustomer.user.create
+      title: User Create
+      summary: >-
+        Delivered when a new user is created in a Kustomer organization.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/KustomerEvent'
+    UserUpdate:
+      name: kustomer.user.update
+      title: User Update
+      summary: >-
+        Delivered when an existing user is modified.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/KustomerEvent'
+    TeamCreate:
+      name: kustomer.team.create
+      title: Team Create
+      summary: >-
+        Delivered when a new team is created in a Kustomer organization.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/KustomerEvent'
+    TeamUpdate:
+      name: kustomer.team.update
+      title: Team Update
+      summary: >-
+        Delivered when an existing team is modified.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/KustomerEvent'
+  schemas:
+    KustomerEvent:
+      type: object
+      description: >-
+        Envelope of an outbound webhook event published by Kustomer. The
+        envelope wraps a snapshot of the affected resource under `data` and,
+        for update events, a JSON-Patch style `changes` object describing what
+        changed.
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the event instance.
+        name:
+          type: string
+          description: >-
+            The event type, e.g. `kustomer.customer.create`,
+            `kustomer.conversation.update`, `kustomer.message.create`.
+          enum:
+            - kustomer.customer.create
+            - kustomer.customer.update
+            - kustomer.conversation.create
+            - kustomer.conversation.update
+            - kustomer.message.create
+            - kustomer.message.update
+            - kustomer.user.create
+            - kustomer.user.update
+            - kustomer.team.create
+            - kustomer.team.update
+        org:
+          type: string
+          description: Identifier of the Kustomer organization that produced the event.
+        orgName:
+          type: string
+          description: Human readable name of the Kustomer organization.
+        partition:
+          type: string
+          description: Internal partition identifier for the organization.
+        createdAt:
+          type: string
+          format: date-time
+          description: Timestamp when the event was generated.
+        persist:
+          type: boolean
+          description: >-
+            Indicates whether the event was persisted by Kustomer for later
+            replay or auditing.
+        client:
+          type: object
+          additionalProperties: true
+          description: >-
+            Information about the client that triggered the event, when
+            available.
+        data:
+          $ref: '#/components/schemas/KustomerResource'
+        changes:
+          $ref: '#/components/schemas/KustomerChanges'
+    KustomerResource:
+      type: object
+      description: >-
+        JSON:API-style snapshot of the resource the event applies to. The
+        concrete shape of `attributes` and `relationships` depends on the
+        resource type (customer, conversation, message, user, or team).
+      properties:
+        type:
+          type: string
+          description: >-
+            The resource type, e.g. `customer`, `conversation`, `message`,
+            `user`, `team`.
+        id:
+          type: string
+          description: Unique identifier of the resource.
+        attributes:
+          type: object
+          additionalProperties: true
+          description: Resource attribute values at the time the event was generated.
+        relationships:
+          type: object
+          additionalProperties: true
+          description: >-
+            Relationships from this resource to other resources, expressed in
+            JSON:API style.
+        links:
+          type: object
+          additionalProperties:
+            type: string
+          description: Hypermedia links related to the resource.
+    KustomerChanges:
+      type: object
+      description: >-
+        JSON-Patch style description of the modifications applied to the
+        resource. Each key under `attributes` or `relationships` describes one
+        operation. Only present on update events.
+      properties:
+        attributes:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ChangeOperation'
+          description: >-
+            Map keyed by attribute name. Each entry is a single change
+            operation showing the before and after values for that attribute.
+        relationships:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ChangeOperation'
+          description: >-
+            Map keyed by relationship name. Each entry is a single change
+            operation showing the before and after values for that
+            relationship.
+    ChangeOperation:
+      type: object
+      description: >-
+        A single JSON-Patch style change operation in a Kustomer update event.
+      properties:
+        op:
+          type: string
+          enum:
+            - replace
+            - add
+            - remove
+          description: >-
+            The operation type. `replace` modifies an existing value, `add`
+            adds a new value, and `remove` deletes an existing value.
+        before:
+          description: >-
+            The value prior to the change, present for `replace` and `remove`
+            operations.
+        after:
+          description: >-
+            The value after the change, present for `replace` and `add`
+            operations.
