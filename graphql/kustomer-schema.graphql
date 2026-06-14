@@ -1,0 +1,926 @@
+"""
+Kustomer GraphQL Schema
+Provider: Kustomer (https://www.kustomer.com)
+Developer Docs: https://developer.kustomer.com/
+Base REST URL: https://api.kustomerapp.com
+Auth: Bearer token (API Key)
+"""
+
+scalar DateTime
+scalar JSON
+scalar Upload
+
+# ─────────────────────────────────────────────
+# ENUMS
+# ─────────────────────────────────────────────
+
+enum ConversationStatusValue {
+  OPEN
+  DONE
+  SNOOZED
+  DELETED
+}
+
+enum MessageTypeValue {
+  EMAIL
+  CHAT
+  SMS
+  VOICE
+  INTERNAL_NOTE
+  SYSTEM
+}
+
+enum SentimentValue {
+  POSITIVE
+  NEUTRAL
+  NEGATIVE
+  MIXED
+}
+
+enum WorkflowTriggerEvent {
+  CONVERSATION_CREATED
+  CONVERSATION_UPDATED
+  CONVERSATION_DONE
+  CUSTOMER_CREATED
+  CUSTOMER_UPDATED
+  MESSAGE_RECEIVED
+  SLA_BREACH
+  TAG_APPLIED
+  FORM_SUBMITTED
+}
+
+enum WorkflowStepType {
+  ASSIGN_TEAM
+  ASSIGN_QUEUE
+  APPLY_TAG
+  SEND_MESSAGE
+  UPDATE_ATTRIBUTE
+  TRIGGER_KBOT
+  CALL_WEBHOOK
+  DELAY
+  CONDITION
+}
+
+enum KBotStatus {
+  ACTIVE
+  INACTIVE
+  DRAFT
+}
+
+enum QueuePriority {
+  LOW
+  NORMAL
+  HIGH
+  URGENT
+}
+
+enum ReportInterval {
+  HOURLY
+  DAILY
+  WEEKLY
+  MONTHLY
+}
+
+# ─────────────────────────────────────────────
+# CUSTOMER
+# ─────────────────────────────────────────────
+
+"""A Kustomer customer record."""
+type Customer {
+  id: ID!
+  externalId: String
+  name: String
+  email: String
+  phone: String
+  locale: String
+  timezone: String
+  signedUpAt: DateTime
+  lastSeenAt: DateTime
+  avatarUrl: String
+  profile: CustomerProfile
+  details: CustomerDetails
+  timeline: CustomerTimeline
+  conversations: [Conversation!]
+  company: Company
+  customAttributes: [CustomAttribute!]
+  tags: [Tag!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""Detailed read-only view of a customer including channel identifiers."""
+type CustomerDetails {
+  customerId: ID!
+  channels: JSON
+  socialProfiles: JSON
+  lifetimeValue: Float
+  totalConversations: Int
+  lastConversationAt: DateTime
+}
+
+"""Editable profile fields for a customer."""
+type CustomerProfile {
+  customerId: ID!
+  firstName: String
+  lastName: String
+  displayName: String
+  gender: String
+  birthdate: DateTime
+  language: String
+  notes: String
+  avatarUrl: String
+}
+
+"""Chronological activity feed for a customer."""
+type CustomerTimeline {
+  customerId: ID!
+  events: [TimelineEvent!]!
+  totalCount: Int!
+}
+
+"""A single event in the customer timeline."""
+type TimelineEvent {
+  id: ID!
+  customerId: ID!
+  type: String!
+  channel: String
+  direction: String
+  summary: String
+  payload: JSON
+  occurredAt: DateTime!
+}
+
+"""Schema definition for a custom attribute on a customer or KObject."""
+type CustomerAttr {
+  id: ID!
+  name: String!
+  label: String!
+  dataType: String!
+  required: Boolean!
+  defaultValue: JSON
+  createdAt: DateTime!
+}
+
+"""An instance of a custom attribute value on a customer record."""
+type CustomAttribute {
+  attrId: ID!
+  name: String!
+  label: String!
+  value: JSON
+}
+
+# ─────────────────────────────────────────────
+# CONVERSATION
+# ─────────────────────────────────────────────
+
+"""A support conversation tied to a customer."""
+type Conversation {
+  id: ID!
+  name: String
+  customer: Customer
+  status: ConversationStatus!
+  channel: String
+  direction: String
+  firstResponseAt: DateTime
+  resolvedAt: DateTime
+  snoozedUntil: DateTime
+  assignedUser: String
+  team: Team
+  queue: Queue
+  tags: [ConversationTag!]
+  meta: ConversationMeta
+  threads: [Thread!]
+  slaPolicy: SLAPolicy
+  slaBreach: SLABreach
+  aiSuggestions: [AISuggestion!]
+  sentiment: SentimentScore
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""Status envelope for a conversation."""
+type ConversationStatus {
+  value: ConversationStatusValue!
+  changedAt: DateTime
+  changedBy: String
+}
+
+"""A tag applied to a conversation."""
+type ConversationTag {
+  tag: Tag!
+  appliedAt: DateTime!
+  appliedBy: String
+}
+
+"""Metadata and routing information for a conversation."""
+type ConversationMeta {
+  conversationId: ID!
+  source: String
+  referrer: String
+  pageTitle: String
+  pageUrl: String
+  browser: String
+  os: String
+  ip: String
+  location: JSON
+}
+
+"""Detailed view of a single conversation with all nested data."""
+type ConversationDetails {
+  conversation: Conversation!
+  participantCount: Int!
+  messageCount: Int!
+  internalNoteCount: Int!
+  attachmentCount: Int!
+  firstMessageAt: DateTime
+  lastMessageAt: DateTime
+}
+
+# ─────────────────────────────────────────────
+# MESSAGE
+# ─────────────────────────────────────────────
+
+"""Union of all message channel types."""
+union MessageContent = EmailMessage | ChatMessage | SmsMessage | VoiceMessage | InternalNote
+
+"""A message or note within a thread."""
+type Message {
+  id: ID!
+  threadId: ID!
+  conversationId: ID!
+  type: MessageTypeValue!
+  direction: String
+  author: String
+  content: MessageContent
+  details: MessageDetails
+  sentAt: DateTime!
+  createdAt: DateTime!
+}
+
+"""Common metadata present on every message."""
+type MessageDetails {
+  messageId: ID!
+  subject: String
+  preview: String
+  hasAttachments: Boolean!
+  attachments: [JSON]
+  externalId: String
+  metadata: JSON
+}
+
+"""Canonical enum type identifier for messages."""
+type MessageType {
+  value: MessageTypeValue!
+  label: String!
+}
+
+"""Email-specific message payload."""
+type EmailMessage {
+  from: String!
+  to: [String!]!
+  cc: [String!]
+  bcc: [String!]
+  subject: String
+  bodyHtml: String
+  bodyText: String
+  headers: JSON
+  messageId: String
+}
+
+"""Live chat message payload."""
+type ChatMessage {
+  body: String!
+  richBody: JSON
+  chatSessionId: String
+  widgetId: String
+}
+
+"""SMS message payload."""
+type SmsMessage {
+  from: String!
+  to: String!
+  body: String!
+  mediaUrls: [String!]
+  twilioSid: String
+}
+
+"""Voice call message payload."""
+type VoiceMessage {
+  from: String!
+  to: String!
+  duration: Int
+  recordingUrl: String
+  transcription: String
+  callSid: String
+}
+
+"""An internal note visible only to agents."""
+type InternalNote {
+  body: String!
+  richBody: JSON
+  mentions: [String!]
+}
+
+# ─────────────────────────────────────────────
+# THREAD
+# ─────────────────────────────────────────────
+
+"""A channel-specific thread within a conversation."""
+type Thread {
+  id: ID!
+  conversationId: ID!
+  channel: String!
+  messages: [Message!]!
+  details: ThreadDetails
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""Extended metadata for a thread."""
+type ThreadDetails {
+  threadId: ID!
+  messageCount: Int!
+  participantEmails: [String!]
+  lastMessageAt: DateTime
+  externalId: String
+}
+
+# ─────────────────────────────────────────────
+# COMPANY
+# ─────────────────────────────────────────────
+
+"""A company / account record linked to customers."""
+type Company {
+  id: ID!
+  name: String!
+  externalId: String
+  domain: String
+  industry: String
+  employeeCount: Int
+  annualRevenue: Float
+  plan: String
+  details: CompanyDetails
+  attributes: [CompanyAttribute!]
+  customers: [Customer!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""Detailed company profile."""
+type CompanyDetails {
+  companyId: ID!
+  description: String
+  website: String
+  phone: String
+  address: JSON
+  logoUrl: String
+  socialProfiles: JSON
+}
+
+"""A custom attribute on a company record."""
+type CompanyAttribute {
+  name: String!
+  label: String!
+  value: JSON
+}
+
+# ─────────────────────────────────────────────
+# TEAM & QUEUE
+# ─────────────────────────────────────────────
+
+"""A support team that owns conversations."""
+type Team {
+  id: ID!
+  name: String!
+  description: String
+  details: TeamDetails
+  queues: [Queue!]
+  slaPolicy: SLAPolicy
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""Detailed metadata for a team."""
+type TeamDetails {
+  teamId: ID!
+  memberCount: Int!
+  activeConversationCount: Int!
+  openConversationCount: Int!
+}
+
+"""A conversation queue within a team."""
+type Queue {
+  id: ID!
+  teamId: ID!
+  name: String!
+  description: String
+  priority: QueuePriority!
+  details: QueueDetails
+  assignments: [QueueAssignment!]
+  slaPolicy: SLAPolicy
+  businessHours: BusinessHour
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""Metrics and routing details for a queue."""
+type QueueDetails {
+  queueId: ID!
+  conversationCount: Int!
+  activeAgentCount: Int!
+  averageHandleTime: Float
+  averageWaitTime: Float
+}
+
+"""An assignment of a conversation to a queue."""
+type QueueAssignment {
+  id: ID!
+  conversationId: ID!
+  queueId: ID!
+  assignedAt: DateTime!
+  assignedBy: String
+  priority: QueuePriority!
+}
+
+# ─────────────────────────────────────────────
+# KBOT & WORKFLOW
+# ─────────────────────────────────────────────
+
+"""An AI-driven bot that handles automated customer interactions."""
+type KBot {
+  id: ID!
+  name: String!
+  status: KBotStatus!
+  description: String
+  details: KBotDetails
+  flows: [KBotFlow!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A specific flow within a KBot."""
+type KBotFlow {
+  id: ID!
+  kbotId: ID!
+  name: String!
+  trigger: String!
+  steps: JSON
+  isDefault: Boolean!
+  createdAt: DateTime!
+}
+
+"""Detailed metrics and configuration for a KBot."""
+type KBotDetails {
+  kbotId: ID!
+  handoffTeamId: String
+  handoffQueueId: String
+  totalSessions: Int!
+  containmentRate: Float
+  avgSessionDuration: Float
+}
+
+"""An automation workflow triggered by events."""
+type Workflow {
+  id: ID!
+  name: String!
+  description: String
+  isActive: Boolean!
+  trigger: WorkflowTrigger!
+  steps: [WorkflowStep!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A single step within a workflow."""
+type WorkflowStep {
+  id: ID!
+  workflowId: ID!
+  stepNumber: Int!
+  type: WorkflowStepType!
+  config: JSON!
+  nextStepId: String
+  conditionStepId: String
+}
+
+"""The event that triggers a workflow."""
+type WorkflowTrigger {
+  id: ID!
+  workflowId: ID!
+  event: WorkflowTriggerEvent!
+  conditions: JSON
+  enabled: Boolean!
+}
+
+# ─────────────────────────────────────────────
+# SLA
+# ─────────────────────────────────────────────
+
+"""An SLA policy defining response and resolution time targets."""
+type SLAPolicy {
+  id: ID!
+  name: String!
+  description: String
+  details: SLADetails
+  breaches: [SLABreach!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""Target times defined within an SLA policy."""
+type SLADetails {
+  slaPolicyId: ID!
+  firstResponseTargetSeconds: Int
+  nextResponseTargetSeconds: Int
+  resolutionTargetSeconds: Int
+  useBusinessHours: Boolean!
+}
+
+"""A recorded SLA breach event on a conversation."""
+type SLABreach {
+  id: ID!
+  conversationId: ID!
+  slaPolicyId: ID!
+  breachType: String!
+  targetSeconds: Int!
+  actualSeconds: Int!
+  breachedAt: DateTime!
+}
+
+# ─────────────────────────────────────────────
+# BUSINESS HOURS
+# ─────────────────────────────────────────────
+
+"""A business hours configuration attached to a queue or team."""
+type BusinessHour {
+  id: ID!
+  name: String!
+  timezone: String!
+  schedule: BusinessSchedule!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""The day-by-day schedule within a business hours object."""
+type BusinessSchedule {
+  businessHourId: ID!
+  monday: JSON
+  tuesday: JSON
+  wednesday: JSON
+  thursday: JSON
+  friday: JSON
+  saturday: JSON
+  sunday: JSON
+  holidays: [JSON!]
+}
+
+# ─────────────────────────────────────────────
+# TAGS
+# ─────────────────────────────────────────────
+
+"""A label applied to customers, conversations, or companies."""
+type Tag {
+  id: ID!
+  name: String!
+  color: String
+  group: TagGroup
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A grouping of related tags."""
+type TagGroup {
+  id: ID!
+  name: String!
+  tags: [Tag!]!
+  createdAt: DateTime!
+}
+
+# ─────────────────────────────────────────────
+# FORMS
+# ─────────────────────────────────────────────
+
+"""A customer-facing form for collecting structured data."""
+type Form {
+  id: ID!
+  name: String!
+  description: String
+  fields: [FormField!]!
+  responses: [FormResponse!]
+  isActive: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A single field definition within a form."""
+type FormField {
+  id: ID!
+  formId: ID!
+  label: String!
+  placeholder: String
+  fieldType: String!
+  required: Boolean!
+  options: [String!]
+  order: Int!
+}
+
+"""A submitted response to a form."""
+type FormResponse {
+  id: ID!
+  formId: ID!
+  customerId: String
+  conversationId: String
+  values: JSON!
+  submittedAt: DateTime!
+}
+
+# ─────────────────────────────────────────────
+# SNIPPETS
+# ─────────────────────────────────────────────
+
+"""A saved reply template used by agents."""
+type Snippet {
+  id: ID!
+  name: String!
+  body: String!
+  richBody: JSON
+  category: SnippetCategory
+  tags: [Tag!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A category grouping multiple snippets."""
+type SnippetCategory {
+  id: ID!
+  name: String!
+  snippets: [Snippet!]
+  createdAt: DateTime!
+}
+
+# ─────────────────────────────────────────────
+# REPORTING & INSIGHTS
+# ─────────────────────────────────────────────
+
+"""A named report aggregating operational data."""
+type Report {
+  id: ID!
+  name: String!
+  description: String
+  filters: [ReportFilter!]
+  interval: ReportInterval!
+  insights: [Insight!]
+  generatedAt: DateTime
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A filter applied when generating a report."""
+type ReportFilter {
+  field: String!
+  operator: String!
+  value: JSON!
+}
+
+"""A single data point or metric within a report."""
+type Insight {
+  id: ID!
+  reportId: ID!
+  metricName: String!
+  metricValue: JSON!
+  dimensionName: String
+  dimensionValue: String
+  periodStart: DateTime!
+  periodEnd: DateTime!
+}
+
+# ─────────────────────────────────────────────
+# AI
+# ─────────────────────────────────────────────
+
+"""Sentiment analysis score for a message or conversation."""
+type SentimentScore {
+  conversationId: ID
+  messageId: ID
+  sentiment: SentimentValue!
+  confidence: Float!
+  analyzedAt: DateTime!
+}
+
+"""An AI-generated suggestion for an agent (e.g. reply draft, next action)."""
+type AISuggestion {
+  id: ID!
+  conversationId: ID!
+  suggestionType: String!
+  content: String!
+  confidence: Float
+  accepted: Boolean
+  createdAt: DateTime!
+}
+
+"""A structured AI-generated response used in KBot or copilot flows."""
+type AIResponse {
+  id: ID!
+  kbotId: String
+  conversationId: String
+  prompt: String!
+  responseText: String!
+  model: String
+  tokensUsed: Int
+  latencyMs: Int
+  createdAt: DateTime!
+}
+
+# ─────────────────────────────────────────────
+# AUTH
+# ─────────────────────────────────────────────
+
+"""An API key used for programmatic authentication."""
+type APIKey {
+  id: ID!
+  name: String!
+  role: String!
+  prefix: String!
+  isActive: Boolean!
+  lastUsedAt: DateTime
+  expiresAt: DateTime
+  createdAt: DateTime!
+}
+
+"""A short-lived access token derived from an API key."""
+type Token {
+  id: ID!
+  apiKeyId: ID!
+  expiresAt: DateTime!
+  issuedAt: DateTime!
+}
+
+"""A webhook subscription for real-time event delivery."""
+type Webhook {
+  id: ID!
+  name: String!
+  url: String!
+  secret: String
+  events: [String!]!
+  isActive: Boolean!
+  lastDeliveredAt: DateTime
+  failureCount: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+# ─────────────────────────────────────────────
+# CONNECTION TYPES (pagination)
+# ─────────────────────────────────────────────
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type CustomerEdge {
+  cursor: String!
+  node: Customer!
+}
+
+type CustomerConnection {
+  edges: [CustomerEdge!]!
+  nodes: [Customer!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type ConversationEdge {
+  cursor: String!
+  node: Conversation!
+}
+
+type ConversationConnection {
+  edges: [ConversationEdge!]!
+  nodes: [Conversation!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+# ─────────────────────────────────────────────
+# QUERY
+# ─────────────────────────────────────────────
+
+type Query {
+  customer(id: ID!): Customer
+  customers(first: Int, after: String, last: Int, before: String, search: String): CustomerConnection!
+
+  conversation(id: ID!): Conversation
+  conversations(first: Int, after: String, status: ConversationStatusValue, teamId: ID, queueId: ID): ConversationConnection!
+
+  message(id: ID!): Message
+  thread(id: ID!): Thread
+
+  company(id: ID!): Company
+  companies(first: Int, after: String, search: String): [Company!]!
+
+  team(id: ID!): Team
+  teams: [Team!]!
+
+  queue(id: ID!): Queue
+  queues(teamId: ID): [Queue!]!
+
+  kbot(id: ID!): KBot
+  kbots: [KBot!]!
+
+  workflow(id: ID!): Workflow
+  workflows: [Workflow!]!
+
+  slaPolicy(id: ID!): SLAPolicy
+  slaPolicies: [SLAPolicy!]!
+
+  businessHour(id: ID!): BusinessHour
+  businessHours: [BusinessHour!]!
+
+  tag(id: ID!): Tag
+  tags(groupId: ID): [Tag!]!
+  tagGroups: [TagGroup!]!
+
+  form(id: ID!): Form
+  forms: [Form!]!
+
+  snippet(id: ID!): Snippet
+  snippets(categoryId: ID): [Snippet!]!
+  snippetCategories: [SnippetCategory!]!
+
+  report(id: ID!): Report
+  reports: [Report!]!
+
+  apiKey(id: ID!): APIKey
+  apiKeys: [APIKey!]!
+
+  webhook(id: ID!): Webhook
+  webhooks: [Webhook!]!
+}
+
+# ─────────────────────────────────────────────
+# MUTATION
+# ─────────────────────────────────────────────
+
+type Mutation {
+  createCustomer(input: JSON!): Customer!
+  updateCustomer(id: ID!, input: JSON!): Customer!
+  deleteCustomer(id: ID!): Boolean!
+
+  createConversation(input: JSON!): Conversation!
+  updateConversation(id: ID!, input: JSON!): Conversation!
+  assignConversation(id: ID!, teamId: ID, queueId: ID, userId: String): Conversation!
+  snoozeConversation(id: ID!, until: DateTime!): Conversation!
+  doneConversation(id: ID!): Conversation!
+  reopenConversation(id: ID!): Conversation!
+
+  sendMessage(conversationId: ID!, input: JSON!): Message!
+  addInternalNote(conversationId: ID!, body: String!, richBody: JSON): InternalNote!
+
+  createCompany(input: JSON!): Company!
+  updateCompany(id: ID!, input: JSON!): Company!
+
+  createTeam(input: JSON!): Team!
+  updateTeam(id: ID!, input: JSON!): Team!
+
+  createQueue(teamId: ID!, input: JSON!): Queue!
+  updateQueue(id: ID!, input: JSON!): Queue!
+
+  createKBot(input: JSON!): KBot!
+  updateKBot(id: ID!, input: JSON!): KBot!
+  activateKBot(id: ID!): KBot!
+  deactivateKBot(id: ID!): KBot!
+
+  createWorkflow(input: JSON!): Workflow!
+  updateWorkflow(id: ID!, input: JSON!): Workflow!
+  toggleWorkflow(id: ID!, isActive: Boolean!): Workflow!
+
+  createSLAPolicy(input: JSON!): SLAPolicy!
+  updateSLAPolicy(id: ID!, input: JSON!): SLAPolicy!
+
+  createBusinessHour(input: JSON!): BusinessHour!
+  updateBusinessHour(id: ID!, input: JSON!): BusinessHour!
+
+  createTag(name: String!, color: String, groupId: ID): Tag!
+  updateTag(id: ID!, input: JSON!): Tag!
+  deleteTag(id: ID!): Boolean!
+
+  applyTagToConversation(conversationId: ID!, tagId: ID!): ConversationTag!
+  removeTagFromConversation(conversationId: ID!, tagId: ID!): Boolean!
+
+  createForm(input: JSON!): Form!
+  updateForm(id: ID!, input: JSON!): Form!
+  submitFormResponse(formId: ID!, values: JSON!, customerId: ID, conversationId: ID): FormResponse!
+
+  createSnippet(input: JSON!): Snippet!
+  updateSnippet(id: ID!, input: JSON!): Snippet!
+  deleteSnippet(id: ID!): Boolean!
+
+  createAPIKey(name: String!, role: String!): APIKey!
+  revokeAPIKey(id: ID!): Boolean!
+
+  createWebhook(input: JSON!): Webhook!
+  updateWebhook(id: ID!, input: JSON!): Webhook!
+  deleteWebhook(id: ID!): Boolean!
+}

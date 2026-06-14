@@ -2,54 +2,57 @@ aid: kustomer
 url: https://raw.githubusercontent.com/api-evangelist/kustomer/refs/heads/main/apis.yml
 name: Kustomer
 kind: company
-description: >-
-  Kustomer is an AI-powered customer service CRM that unifies conversations, customer data, automation, and reporting across channels.
+description: Kustomer is an AI-powered customer service CRM that unifies conversations,
+  customer data, automation, and reporting across channels.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Customer Service
-  - CRM
-  - Helpdesk
-  - Messaging
-  - AI
+- Customer Service
+- CRM
+- Helpdesk
+- Messaging
+- AI
 created: '2026-05-08'
 modified: '2026-05-30'
 specificationVersion: '0.19'
 apis:
-  - aid: kustomer:kustomer-api
-    name: Kustomer REST API
-    description: >-
-      Kustomer REST API for customers, conversations, messages, KObjects, queues, teams, users, workflows, search, and analytics. Supports v1 and v2 endpoints with bearer-token authentication.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-    humanURL: https://developer.kustomer.com/kustomer-api-docs/reference
-    baseURL: https://api.kustomerapp.com
-    tags:
-      - Customer Service
-      - CRM
-      - REST
-    properties:
-      - type: Documentation
-        url: https://developer.kustomer.com/kustomer-api-docs/reference
-      - type: Authentication
-        url: https://developer.kustomer.com/kustomer-api-docs/reference/authentication
-      - type: OpenAPI
-        url: openapi/kustomer-openapi.yml
-      - type: AsyncAPI
-        url: asyncapi/kustomer-webhooks-asyncapi.yml
-common:
-  - type: GitHubOrganization
-    url: https://github.com/kustomer
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/kustomer
-  - type: Website
-    url: https://www.kustomer.com/
+- aid: kustomer:kustomer-api
+  name: Kustomer REST API
+  description: Kustomer REST API for customers, conversations, messages, KObjects,
+    queues, teams, users, workflows, search, and analytics. Supports v1 and v2 endpoints
+    with bearer-token authentication.
+  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.kustomer.com/kustomer-api-docs/reference
+  baseURL: https://api.kustomerapp.com
+  tags:
+  - Customer Service
+  - CRM
+  - REST
+  properties:
   - type: Documentation
     url: https://developer.kustomer.com/kustomer-api-docs/reference
-  - type: Plans
-    url: plans/kustomer-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/kustomer-rate-limits.yml
-  - type: FinOps
-    url: finops/kustomer-finops.yml
+  - type: Authentication
+    url: https://developer.kustomer.com/kustomer-api-docs/reference/authentication
+  - type: OpenAPI
+    url: openapi/kustomer-openapi.yml
+  - type: AsyncAPI
+    url: asyncapi/kustomer-webhooks-asyncapi.yml
+  - url: graphql/kustomer-graphql.md
+    type: GraphQL
+common:
+- type: GitHubOrganization
+  url: https://github.com/kustomer
+- type: LinkedIn
+  url: https://www.linkedin.com/company/kustomer
+- type: Website
+  url: https://www.kustomer.com/
+- type: Documentation
+  url: https://developer.kustomer.com/kustomer-api-docs/reference
+- type: Plans
+  url: plans/kustomer-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/kustomer-rate-limits.yml
+- type: FinOps
+  url: finops/kustomer-finops.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
