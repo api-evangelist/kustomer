@@ -1,0 +1,446 @@
+{
+  "item": [
+    {
+      "id": "40b2bcbd-5bf1-4b9c-afcb-5fa86acd90a4",
+      "name": "Customers",
+      "description": {
+        "content": "Customer records in Kustomer",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fc44937f-10c5-4304-b9c1-0d08a17bd864",
+          "name": "Create a customer",
+          "request": {
+            "name": "Create a customer",
+            "description": {
+              "content": "Create a new customer record in Kustomer.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "customers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"emails\": [\n    {\n      \"email\": \"<email>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"email\": \"<email>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"phones\": [\n    {\n      \"phone\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"phone\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"externalId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f8f28d13-cf9c-4a43-8a31-c47c9bc7e178",
+              "name": "Customer created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"emails\": [\n    {\n      \"email\": \"<email>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"email\": \"<email>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"phones\": [\n    {\n      \"phone\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"phone\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"externalId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"customer\",\n  \"id\": \"string\",\n  \"attributes\": {\n    \"key_0\": 3072.145961694305\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "adf277e3-0b2d-498b-a2e4-f5053e43f93a",
+              "name": "Missing or invalid bearer token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"emails\": [\n    {\n      \"email\": \"<email>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"email\": \"<email>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"phones\": [\n    {\n      \"phone\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"phone\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"externalId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "afab8364-080c-4f43-9676-cd7a6433f85e",
+              "name": "Validation error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "customers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"emails\": [\n    {\n      \"email\": \"<email>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"email\": \"<email>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"phones\": [\n    {\n      \"phone\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"phone\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ],\n  \"externalId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "79bfd8e9-87e2-4838-8241-4736ccca2946",
+      "name": "Conversations",
+      "description": {
+        "content": "Conversation threads with customers",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "792b7368-37ae-4e84-b38b-5afb25a7f601",
+          "name": "Create a conversation",
+          "request": {
+            "name": "Create a conversation",
+            "description": {
+              "content": "Create a new conversation associated with a customer.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "conversations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer\": \"<string>\",\n  \"name\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "44431580-b523-455b-b3eb-2237da3244d5",
+              "name": "Conversation created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conversations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customer\": \"<string>\",\n  \"name\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"conversation\",\n  \"id\": \"string\",\n  \"attributes\": {\n    \"key_0\": 4671.279417270383\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2e52a449-4b40-40f8-9188-0f7befb6f00e",
+              "name": "Missing or invalid bearer token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conversations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customer\": \"<string>\",\n  \"name\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f0cee3dc-628f-42ef-abc7-31d185a77de4",
+              "name": "Validation error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "conversations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customer\": \"<string>\",\n  \"name\": \"<string>\",\n  \"channel\": \"<string>\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.kustomerapp.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "051944e6-d36d-4b74-99ff-dfbb8773c9ec",
+    "name": "Kustomer REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Kustomer is an AI-powered customer service CRM. The REST API exposes resources such as customers and conversations, allowing programmatic integration with the Kustomer platform. Authentication uses a bearer token in the Authorization header.\n\nContact Support:\n Name: Kustomer Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}
