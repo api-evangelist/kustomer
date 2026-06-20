@@ -4,7 +4,7 @@ name: Kustomer
 kind: company
 description: Kustomer is an AI-powered customer service CRM that unifies conversations,
   customer data, automation, and reporting across channels.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Customer Service
 - CRM
@@ -20,7 +20,7 @@ apis:
   description: Kustomer REST API for customers, conversations, messages, KObjects,
     queues, teams, users, workflows, search, and analytics. Supports v1 and v2 endpoints
     with bearer-token authentication.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://developer.kustomer.com/kustomer-api-docs/reference
   baseURL: https://api.kustomerapp.com
   tags:
