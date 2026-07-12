@@ -39,6 +39,10 @@ apis:
   - url: graphql/kustomer-graphql.md
     type: GraphQL
 common:
+- type: DomainSecurity
+  url: security/kustomer-domain-security.yml
+- type: Authentication
+  url: authentication/kustomer-authentication.yml
 - type: GitHubOrganization
   url: https://github.com/kustomer
 - type: LinkedIn
@@ -53,6 +57,8 @@ common:
   url: rate-limits/kustomer-rate-limits.yml
 - type: FinOps
   url: finops/kustomer-finops.yml
+- url: https://www.kustomer.com/resources/blog/
+  type: Blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/kustomer-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: 'Provide an API key issued from Settings > Security > API Keys in the Kustomer
+    console. Header format: `Authorization: Bearer {API_KEY}`.'
+  sources:
+  - openapi/kustomer-openapi.yml

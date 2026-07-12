@@ -1,0 +1,41 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.kustomer.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  9 01:18:02 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: developer.kustomer.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 23 12:09:06 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: api.kustomerapp.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 27 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+domains:
+- domain: kustomer.com
+  dnssec: true
+  caa:
+  - 0 issue "digicert.com"
+  - 0 issue "sectigo.com"
+  - 0 iodef "mailto:devops+caa@kustomer.com"
+  - 0 issue "pki.goog"
+  - 0 issue "letsencrypt.org"
+  - 0 issue "amazon.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+- domain: kustomerapp.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none
