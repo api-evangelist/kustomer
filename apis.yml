@@ -39,6 +39,8 @@ apis:
   - url: graphql/kustomer-graphql.md
     type: GraphQL
 common:
+- type: AgenticAccess
+  url: agentic-access/kustomer-agentic-access.yml
 - type: DomainSecurity
   url: security/kustomer-domain-security.yml
 - type: Authentication
