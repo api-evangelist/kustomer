@@ -1,0 +1,87 @@
+openapi: 3.1.0
+info:
+  title: Kustomer REST Conversations Customers API
+  description: Kustomer is an AI-powered customer service CRM. The REST API exposes resources such as customers and conversations, allowing programmatic integration with the Kustomer platform. Authentication uses a bearer token in the Authorization header.
+  version: '1.0'
+  contact:
+    name: Kustomer Developer Portal
+    url: https://developer.kustomer.com/kustomer-api-docs/reference
+servers:
+- url: https://api.kustomerapp.com
+  description: Kustomer API production base URL
+security:
+- bearerAuth: []
+tags:
+- name: Customers
+  description: Customer records in Kustomer
+paths:
+  /v1/customers:
+    post:
+      tags:
+      - Customers
+      operationId: createCustomer
+      summary: Create a customer
+      description: Create a new customer record in Kustomer.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerCreate'
+      responses:
+        '200':
+          description: Customer created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+        '401':
+          description: Missing or invalid bearer token
+        '422':
+          description: Validation error
+components:
+  schemas:
+    CustomerResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          example: customer
+        id:
+          type: string
+        attributes:
+          type: object
+          additionalProperties: true
+    CustomerCreate:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Customer display name
+        emails:
+          type: array
+          items:
+            type: object
+            properties:
+              email:
+                type: string
+                format: email
+              type:
+                type: string
+        phones:
+          type: array
+          items:
+            type: object
+            properties:
+              phone:
+                type: string
+              type:
+                type: string
+        externalId:
+          type: string
+          description: Identifier for the customer in your system
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'Provide an API key issued from Settings > Security > API Keys in the Kustomer console. Header format: `Authorization: Bearer {API_KEY}`.'
