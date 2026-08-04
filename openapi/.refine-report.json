@@ -1,0 +1,16 @@
+{
+  "provider": "kustomer",
+  "sources": [
+    "kustomer-conversations-api-openapi.yml",
+    "kustomer-customers-api-openapi.yml"
+  ],
+  "outputs": [
+    "kustomer-conversations-api-openapi.yml",
+    "kustomer-customers-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
