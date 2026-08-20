@@ -21,6 +21,12 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/kustomer.p
 tags:
 - Customer Service
 - CRM
+- Help Desk
+- Messaging
+- Artificial Intelligence
+tags_raw:
+- Customer Service
+- CRM
 - Helpdesk
 - Messaging
 - AI
