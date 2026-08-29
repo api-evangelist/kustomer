@@ -83,6 +83,9 @@ apis:
   - type: GraphQL
     url: graphql/kustomer-graphql.md
 common:
+- type: CapabilityMap
+  url: capabilities/kustomer-capability-edges.yml
+  name: Kustomer Business Capability Map
 - type: AgenticAccess
   url: agentic-access/kustomer-agentic-access.yml
 - type: DomainSecurity
