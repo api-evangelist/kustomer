@@ -1,44 +1,19 @@
-specification: API Commons Plans
-specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
-provider: Kustomer
-providerId: kustomer
-created: '2026-05-08'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-08, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-08'
-reconciled: false
-tags:
-- Customer Support
-- CX
-- Omnichannel
-- CRM
-- AI
-- Plans
-description: Placeholder plans/pricing artifact for Kustomer. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled against the provider's documentation.
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://www.kustomer.com/pricing/
 sources:
-- https://www.kustomer.com/
-plans:
-- id: kustomer-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
-  entries:
-  - label: API Access
-    name: api_access
-    type: flat
-    metric: varies
-    limit: -1
-    timeFrame: usage
-    geo: global
-    unit: 1
-    price: see https://www.kustomer.com/
-    userMultiplied: false
-  elements:
-  - name: Pending Reconciliation
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+- https://www.kustomer.com/pricing/
+provenance:
+  tool: planning/api-economics/harvest_pricing.py
+  run: 20260920T124425
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: negotiated
+published: false
+note: Page states no posted pricing; offers an ROI calculator/assessment and connection to sales for exact
+  pricing. Feature list mentions Voice and WhatsApp are 'pay as you go' but no numeric prices are given.
+plan_count: 0
+plans: []
+rate_limit_statements:
+- API Rate Limit 2,000 RPM

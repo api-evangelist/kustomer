@@ -84,6 +84,8 @@ apis:
   - type: GraphQL
     url: graphql/kustomer-graphql.md
 common:
+- type: Pricing
+  url: https://www.kustomer.com/pricing/
 - type: CapabilityMap
   url: capabilities/kustomer-capability-edges.yml
   name: Kustomer Business Capability Map
