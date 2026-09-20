@@ -10,6 +10,10 @@ provenance:
   grounding: every price_text was found verbatim in the fetched page text
 audience: business-product
 pricing_basis: negotiated
+delivery:
+  delivery: managed
+  method: keyword-prefilter
+  read: '2026-09-20'
 published: false
 note: Page states no posted pricing; offers an ROI calculator/assessment and connection to sales for exact
   pricing. Feature list mentions Voice and WhatsApp are 'pay as you go' but no numeric prices are given.
