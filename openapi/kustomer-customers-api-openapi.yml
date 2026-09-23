@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Kustomer REST Conversations Customers API
+  title: Kustomer REST Customers API
   description: Kustomer is an AI-powered customer service CRM. The REST API exposes resources such as customers and conversations, allowing programmatic integration with the Kustomer platform. Authentication uses a bearer token in the Authorization header.
   version: '1.0'
   contact:
