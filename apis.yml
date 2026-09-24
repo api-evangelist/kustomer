@@ -37,12 +37,14 @@ tags:
 - Help Desk
 - Messaging
 - Artificial Intelligence
+- Conversational AI
 tags_raw:
 - Customer Service
 - CRM
 - Helpdesk
 - Messaging
 - AI
+- Conversational AI
 created: '2026-05-08'
 modified: '2026-05-30'
 specificationVersion: '0.23'
@@ -63,8 +65,6 @@ apis:
     url: https://developer.kustomer.com/kustomer-api-docs/reference/authentication
   - type: AsyncAPI
     url: asyncapi/kustomer-webhooks-asyncapi.yml
-  - type: GraphQL
-    url: graphql/kustomer-graphql.md
 - aid: kustomer:kustomer-customers-api
   name: Kustomer Customers API
   description: Customer records in Kustomer
@@ -81,8 +81,6 @@ apis:
     url: https://developer.kustomer.com/kustomer-api-docs/reference/authentication
   - type: AsyncAPI
     url: asyncapi/kustomer-webhooks-asyncapi.yml
-  - type: GraphQL
-    url: graphql/kustomer-graphql.md
 common:
 - type: Pricing
   url: https://www.kustomer.com/pricing/
