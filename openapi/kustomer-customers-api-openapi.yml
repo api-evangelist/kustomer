@@ -41,17 +41,6 @@ paths:
           description: Validation error
 components:
   schemas:
-    CustomerResponse:
-      type: object
-      properties:
-        type:
-          type: string
-          example: customer
-        id:
-          type: string
-        attributes:
-          type: object
-          additionalProperties: true
     CustomerCreate:
       type: object
       properties:
@@ -80,6 +69,17 @@ components:
         externalId:
           type: string
           description: Identifier for the customer in your system
+    CustomerResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          example: customer
+        id:
+          type: string
+        attributes:
+          type: object
+          additionalProperties: true
   securitySchemes:
     bearerAuth:
       type: http
