@@ -1,0 +1,443 @@
+generated: '2026-10-12'
+method: searched
+source:
+- https://zapier.com/apps/kustomer/integrations
+checked:
+- https://composio.dev/toolkits/kustomer
+- https://monid.ai/tools/kustomer
+- https://n8n.io/integrations/kustomer/
+- https://zapier.com/apps/kustomer/integrations
+summary: null
+marketplace_apps:
+- marketplace: zapier
+  channel: ipaas-listing
+  app: kustomer
+  url: https://zapier.com/apps/kustomer/integrations
+  external_url: http://kustomer.com/
+  partner_tier: SILVER
+  triggers:
+  - key: conversationCreated
+    label: Conversation Created
+  - key: conversationUpdated
+    label: Conversation Updated
+  - key: customerCreated
+    label: Customer Created
+  - key: customerUpdated
+    label: Customer Updated
+  - key: messageCreated
+    label: Message Created
+  - key: messageUpdated
+    label: Message Updated
+  actions:
+  - key: createConversation
+    label: Create Conversation
+  - key: createCustomer
+    label: Create Customer
+  - key: createNote
+    label: Create Notes
+  - key: createUser
+    label: Create User
+  - key: updateConversation
+    label: Update Conversation
+  - key: updateCustomer
+    label: Update Customer
+  searches:
+  - key: findConversation
+    label: Find Conversation
+  - key: findCustomer
+    label: Find Customer
+  - key: findUser
+    label: Find User
+edges:
+- partner_name: Google Business Profile
+  partner: google-business-profile
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/google-business-profile
+  direction: third-party
+  category: Google
+  partner_url: https://www.google.com/business/
+- partner_name: Heyflow
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/heyflow
+  direction: third-party
+  category: Website & App Building
+  partner_url: https://heyflow.com/
+- partner_name: Fireflies.ai
+  partner: fireflies
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/fireflies
+  direction: third-party
+  category: Transcription
+  partner_url: https://fireflies.ai/
+- partner_name: iClosed
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/iclosed
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://iclosed.io/
+- partner_name: Microsoft SharePoint
+  partner: sharepoint
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/sharepoint
+  direction: third-party
+  category: Microsoft
+  partner_url: https://www.microsoft.com/en-ca/microsoft-365/sharepoint/collaboration
+- partner_name: ShipStation
+  partner: shipstation
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/shipstation
+  direction: third-party
+  category: eCommerce
+  partner_url: http://www.shipstation.com/
+- partner_name: Jira Software Cloud
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/jira-software-cloud
+  direction: third-party
+  category: Project Management
+  partner_url: https://www.atlassian.com/software/jira
+- partner_name: Acuity Scheduling
+  partner: acuity-scheduling
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/acuity-scheduling
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://acuityscheduling.com/?utm_source=zapier.com&utm_medium=referral&utm_campaign=integration-page
+- partner_name: Hostaway
+  partner: hostaway
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/hostaway
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://www.hostaway.com/
+- partner_name: Magento 2.X
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/magento-v2
+  direction: third-party
+  category: eCommerce
+  partner_url: https://magento.com/
+- partner_name: Freshcaller
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/freshcaller
+  direction: third-party
+  category: Phone & SMS
+  partner_url: https://www.freshworks.com/freshcaller-cloud-pbx/
+- partner_name: Google Sheets
+  partner: google-sheets
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/google-sheets
+  direction: third-party
+  category: Google
+  partner_url: http://sheets.google.com/
+- partner_name: Autohost
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/autohost-webhooks
+  direction: third-party
+  category: Security & Identity Tools
+  partner_url: https://www.autohost.ai/
+- partner_name: Slack
+  partner: slack
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/slack
+  direction: third-party
+  category: Team Chat
+  partner_url: https://slack.com/
+- partner_name: Shopify
+  partner: shopify
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/shopify
+  direction: third-party
+  category: eCommerce
+  partner_url: https://www.shopify.com/
+- partner_name: ActiveCampaign
+  partner: activecampaign
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/activecampaign
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://www.activecampaign.com/?utm_source=unpaid_syndication_website&utm_medium=referral&utm_campaign=zapier_listing
+- partner_name: Qualtrics
+  partner: qualtrics
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/qualtrics
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://www.qualtrics.com/
+- partner_name: Emotive
+  partner: emotive
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/emotive
+  direction: third-party
+  category: eCommerce
+  partner_url: https://emotive.io/
+- partner_name: Slooce - Unlimited SMS Texting
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/slooce-unlimited-sms-texting
+  direction: third-party
+  category: Phone & SMS
+  partner_url: https://sloocetech.com/
+- partner_name: Wati
+  partner: wati
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/wati
+  direction: third-party
+  category: Communication
+  partner_url: https://wati.io/
+- partner_name: Gorgias
+  partner: gorgias
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/gorgias
+  direction: third-party
+  category: Customer Support
+  partner_url: https://www.gorgias.com/
+- partner_name: Wheelbase
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/wheelbase
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://www.wheelbasepro.com/
+- partner_name: HubSpot
+  partner: hubspot
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/hubspot
+  direction: third-party
+  category: Marketing Automation
+  partner_url: http://www.hubspot.com/
+- partner_name: Google Forms
+  partner: google-forms
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/google-forms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: http://google.com/
+- partner_name: Facebook Lead Ads (for Business admins)
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/facebook-lead-ads-beta
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://facebook.com/
+- partner_name: Attentive
+  partner: attentive
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/attentive
+  direction: third-party
+  category: Marketing
+  partner_url: https://www.attentivemobile.com/
+- partner_name: Testimonial
+  partner: null
+  partner_match: null
+  partner_candidate: zapier
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/testimonial
+  direction: third-party
+  category: Marketing
+  partner_url: https://zapier.com/testimonial.to
+- partner_name: HumbleFax
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/humblefax
+  direction: third-party
+  category: Fax
+  partner_url: https://humblefax.com/
+- partner_name: Wrangle
+  partner: wrangle
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/wrangle-io
+  direction: third-party
+  category: Team Collaboration
+  partner_url: https://www.wrangle.io/
+- partner_name: Google Docs
+  partner: google-docs
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/kustomer/integrations/google-docs
+  direction: third-party
+  category: Documents
+  partner_url: http://google.com/
+templates:
+- title: Create Kustomer conversations when customers complete Mavenoid conversations
+  url: https://zapier.com/apps/kustomer/integrations/mavenoid/727406/create-kustomer-conversations-when-customers-complete-mavenoid-conversations
+  apps:
+  - mavenoid
+  - kustomer
+- title: Add notes to conversations in Kustomer when new feedback is received in Simplesat
+  url: https://zapier.com/apps/kustomer/integrations/simplesat/843617/add-notes-to-conversations-in-kustomer-when-new-feedback-is-received-in-simplesat
+  apps:
+  - simplesat
+  - kustomer
+- title: Send SMS messages via Slooce – Unlimited SMS Texting for new Kustomer leads
+  url: https://zapier.com/apps/kustomer/integrations/slooce-unlimited-sms-texting/1170812/send-sms-messages-via-slooce-unlimited-sms-texting-for-new-kustomer-leads
+  apps:
+  - kustomer
+  - slooce-unlimited-sms-texting
+- title: Create Kustomer conversations for new Typeform entries
+  url: https://zapier.com/apps/kustomer/integrations/typeform/1329981/create-kustomer-conversations-for-new-typeform-entries
+  apps:
+  - typeform
+  - kustomer
+- title: Create Kustomer customers from new Boulevard clients
+  url: https://zapier.com/apps/boulevard/integrations/kustomer/1330025/create-kustomer-customers-from-new-boulevard-clients
+  apps:
+  - boulevard
+  - kustomer
+- title: Create Kustomer customers for new WordPress users
+  url: https://zapier.com/apps/kustomer/integrations/wordpress/1330087/create-kustomer-customers-for-new-wordpress-users
+  apps:
+  - wordpress
+  - kustomer
+- title: Create new Kustomer customers from Typeform entries
+  url: https://zapier.com/apps/kustomer/integrations/typeform/1385927/create-new-kustomer-customers-from-typeform-entries
+  apps:
+  - typeform
+  - kustomer
+- title: Create Kustomer customers from new WPForms form entries
+  url: https://zapier.com/apps/kustomer/integrations/wpforms/1417202/create-kustomer-customers-from-new-wpforms-form-entries
+  apps:
+  - wpforms
+  - kustomer
+- title: Create Kustomer customers from new Leadpages form submissions
+  url: https://zapier.com/apps/kustomer/integrations/leadpages/1418666/create-kustomer-customers-from-new-leadpages-form-submissions
+  apps:
+  - leadpages
+  - kustomer
+- title: Create Kustomer conversations for new 123FormBuilder submissions
+  url: https://zapier.com/apps/123formbuilder/integrations/kustomer/1419926/create-kustomer-conversations-for-new-123formbuilder-submissions
+  apps:
+  - 123formbuilder
+  - kustomer
+- title: Create conversations in Kustomer from new Gravity Forms submissions
+  url: https://zapier.com/apps/gravity-forms/integrations/kustomer/1425281/create-conversations-in-kustomer-from-new-gravity-forms-submissions
+  apps:
+  - gravity-forms
+  - kustomer
+- title: Create Kustomer customers from new Formsite form results
+  url: https://zapier.com/apps/formsite/integrations/kustomer/1434584/create-kustomer-customers-from-new-formsite-form-results
+  apps:
+  - formsite
+  - kustomer
+template_total: 48
