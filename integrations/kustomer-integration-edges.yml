@@ -4,8 +4,11 @@ source:
 - https://zapier.com/apps/kustomer/integrations
 checked:
 - https://composio.dev/toolkits/kustomer
+- https://fivetran.com/docs/activations/destinations/available-destinations/kustomer
+- https://hightouch.com/docs/destinations/kustomer
 - https://monid.ai/tools/kustomer
 - https://n8n.io/integrations/kustomer/
+- https://www.twilio.com/docs/segment/connections/destinations/catalog/kustomer
 - https://zapier.com/apps/kustomer/integrations
 summary: null
 marketplace_apps:
@@ -379,6 +382,76 @@ edges:
   direction: third-party
   category: Documents
   partner_url: http://google.com/
+- partner_name: Twilio Segment
+  partner: segment
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://www.twilio.com/docs/segment/connections/destinations/catalog/kustomer
+  coverage_role:
+  - destination
+  cdp_signals:
+    destination:
+      catalog_entries:
+      - kustomer
+      status: PUBLIC
+      partner_owned: true
+      connection_modes:
+      - cloud:mobile
+      - cloud:server
+      - cloud:web
+      accepted_methods:
+      - Identify
+      - Page
+      - Track
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
+- partner_name: Hightouch
+  partner: hightouch
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://hightouch.com/docs/destinations/kustomer
+  coverage_role:
+  - destination
+  cdp_signals:
+    destination:
+      catalog_entries:
+      - kustomer
+      status: released
+      sync_types:
+      - Companies
+      - Customers
+      sync_modes:
+      - update
+      - upsert
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
+- partner_name: Census
+  partner: getcensus
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://fivetran.com/docs/activations/destinations/available-destinations/kustomer
+  coverage_role:
+  - destination
+  cdp_signals:
+    destination:
+      catalog_entries:
+      - kustomer
+      sync_behaviours:
+      - update or create
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
 templates:
 - title: Create Kustomer conversations when customers complete Mavenoid conversations
   url: https://zapier.com/apps/kustomer/integrations/mavenoid/727406/create-kustomer-conversations-when-customers-complete-mavenoid-conversations
