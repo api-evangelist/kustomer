@@ -10,6 +10,7 @@ checked:
 - https://n8n.io/integrations/kustomer/
 - https://www.twilio.com/docs/segment/connections/destinations/catalog/kustomer
 - https://zapier.com/apps/kustomer/integrations
+- shopify/integrations/shopify-integration-edges.yml
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -452,6 +453,24 @@ edges:
       - update or create
   detected_by: sweep-cdp.py
   first_seen: '2026-10-14'
+- partner_name: Shopify (own)
+  partner: shopify
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://apps.shopify.com/kustomer
+  mirror_of: shopify/integrations/shopify-integration-edges.yml
+  apps:
+  - Kustomer
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
+  publisher_verified:
+  - Built for Shopify
 templates:
 - title: Create Kustomer conversations when customers complete Mavenoid conversations
   url: https://zapier.com/apps/kustomer/integrations/mavenoid/727406/create-kustomer-conversations-when-customers-complete-mavenoid-conversations

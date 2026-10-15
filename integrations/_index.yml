@@ -390,3 +390,15 @@
   relationship: connector-coverage
   status: not-a-workflow
   arazzo: null
+- slug: kustomer-shopify-own
+  label: Shopify (own)
+  partner: shopify
+  partner_name: Shopify (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://apps.shopify.com/kustomer
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
