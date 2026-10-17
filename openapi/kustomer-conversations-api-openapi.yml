@@ -41,6 +41,17 @@ paths:
           description: Validation error
 components:
   schemas:
+    ConversationResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          example: conversation
+        id:
+          type: string
+        attributes:
+          type: object
+          additionalProperties: true
     ConversationCreate:
       type: object
       properties:
@@ -56,17 +67,6 @@ components:
         status:
           type: string
           description: Status such as open, snoozed, done
-    ConversationResponse:
-      type: object
-      properties:
-        type:
-          type: string
-          example: conversation
-        id:
-          type: string
-        attributes:
-          type: object
-          additionalProperties: true
   securitySchemes:
     bearerAuth:
       type: http
