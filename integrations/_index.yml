@@ -477,5 +477,5 @@
     - connectors/applications/kustomer
     vendor_link: https://www.kustomer.com/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
