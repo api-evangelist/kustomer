@@ -479,3 +479,15 @@
     builder: Fivetran
   status: not-a-workflow
   arazzo: null
+- slug: kustomer-talkdesk-own
+  label: Talkdesk (own)
+  partner: talkdesk
+  partner_name: Talkdesk (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://appconnect.talkdesk.com/apps/kustomer-9967a557-c4a9-4b3f-880c-12159ac23d6e
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null

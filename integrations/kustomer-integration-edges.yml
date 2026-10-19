@@ -15,6 +15,7 @@ checked:
 - https://zapier.com/api/v4/apps/
 - https://zapier.com/apps/kustomer/integrations
 - shopify/integrations/shopify-integration-edges.yml
+- talkdesk/integrations/talkdesk-integration-edges.yml
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -552,6 +553,22 @@ edges:
     builder: Fivetran
   detected_by: sweep-data-integration.py
   first_seen: '2026-10-18'
+- partner_name: Talkdesk (own)
+  partner: talkdesk
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://appconnect.talkdesk.com/apps/kustomer-9967a557-c4a9-4b3f-880c-12159ac23d6e
+  mirror_of: talkdesk/integrations/talkdesk-integration-edges.yml
+  apps:
+  - Kustomer
+  listing_count: 1
+  detected: '2026-10-19'
+  detected_by: mirror-platform-listings.py
 templates:
 - title: Create Kustomer conversations when customers complete Mavenoid conversations
   url: https://zapier.com/apps/kustomer/integrations/mavenoid/727406/create-kustomer-conversations-when-customers-complete-mavenoid-conversations
