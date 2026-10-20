@@ -1,4 +1,4 @@
-generated: '2026-10-12'
+generated: '2026-10-20'
 method: searched
 source:
 - https://zapier.com/apps/kustomer/integrations
@@ -59,336 +59,6 @@ marketplace_apps:
   - key: findUser
     label: Find User
 edges:
-- partner_name: Google Business Profile
-  partner: google-business-profile
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/google-business-profile
-  direction: third-party
-  category: Google
-  partner_url: https://www.google.com/business/
-- partner_name: Heyflow
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/heyflow
-  direction: third-party
-  category: Website & App Building
-  partner_url: https://heyflow.com/
-- partner_name: Fireflies.ai
-  partner: fireflies
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/fireflies
-  direction: third-party
-  category: Transcription
-  partner_url: https://fireflies.ai/
-- partner_name: iClosed
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/iclosed
-  direction: third-party
-  category: Scheduling & Booking
-  partner_url: https://iclosed.io/
-- partner_name: Microsoft SharePoint
-  partner: sharepoint
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/sharepoint
-  direction: third-party
-  category: Microsoft
-  partner_url: https://www.microsoft.com/en-ca/microsoft-365/sharepoint/collaboration
-- partner_name: ShipStation
-  partner: shipstation
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/shipstation
-  direction: third-party
-  category: eCommerce
-  partner_url: http://www.shipstation.com/
-- partner_name: Jira Software Cloud
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/jira-software-cloud
-  direction: third-party
-  category: Project Management
-  partner_url: https://www.atlassian.com/software/jira
-- partner_name: Acuity Scheduling
-  partner: acuity-scheduling
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/acuity-scheduling
-  direction: third-party
-  category: Scheduling & Booking
-  partner_url: https://acuityscheduling.com/?utm_source=zapier.com&utm_medium=referral&utm_campaign=integration-page
-- partner_name: Hostaway
-  partner: hostaway
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/hostaway
-  direction: third-party
-  category: Scheduling & Booking
-  partner_url: https://www.hostaway.com/
-- partner_name: Magento 2.X
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/magento-v2
-  direction: third-party
-  category: eCommerce
-  partner_url: https://magento.com/
-- partner_name: Freshcaller
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/freshcaller
-  direction: third-party
-  category: Phone & SMS
-  partner_url: https://www.freshworks.com/freshcaller-cloud-pbx/
-- partner_name: Google Sheets
-  partner: google-sheets
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/google-sheets
-  direction: third-party
-  category: Google
-  partner_url: http://sheets.google.com/
-- partner_name: Autohost
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/autohost-webhooks
-  direction: third-party
-  category: Security & Identity Tools
-  partner_url: https://www.autohost.ai/
-- partner_name: Slack
-  partner: slack
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/slack
-  direction: third-party
-  category: Team Chat
-  partner_url: https://slack.com/
-- partner_name: Shopify
-  partner: shopify
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/shopify
-  direction: third-party
-  category: eCommerce
-  partner_url: https://www.shopify.com/
-- partner_name: ActiveCampaign
-  partner: activecampaign
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/activecampaign
-  direction: third-party
-  category: Marketing Automation
-  partner_url: https://www.activecampaign.com/?utm_source=unpaid_syndication_website&utm_medium=referral&utm_campaign=zapier_listing
-- partner_name: Qualtrics
-  partner: qualtrics
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/qualtrics
-  direction: third-party
-  category: Forms & Surveys
-  partner_url: https://www.qualtrics.com/
-- partner_name: Emotive
-  partner: emotive
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/emotive
-  direction: third-party
-  category: eCommerce
-  partner_url: https://emotive.io/
-- partner_name: Slooce - Unlimited SMS Texting
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/slooce-unlimited-sms-texting
-  direction: third-party
-  category: Phone & SMS
-  partner_url: https://sloocetech.com/
-- partner_name: Wati
-  partner: wati
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/wati
-  direction: third-party
-  category: Communication
-  partner_url: https://wati.io/
-- partner_name: Gorgias
-  partner: gorgias
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/gorgias
-  direction: third-party
-  category: Customer Support
-  partner_url: https://www.gorgias.com/
-- partner_name: Wheelbase
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/wheelbase
-  direction: third-party
-  category: Scheduling & Booking
-  partner_url: https://www.wheelbasepro.com/
-- partner_name: HubSpot
-  partner: hubspot
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/hubspot
-  direction: third-party
-  category: Marketing Automation
-  partner_url: http://www.hubspot.com/
-- partner_name: Google Forms
-  partner: google-forms
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/google-forms
-  direction: third-party
-  category: Forms & Surveys
-  partner_url: http://google.com/
-- partner_name: Facebook Lead Ads (for Business admins)
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/facebook-lead-ads-beta
-  direction: third-party
-  category: Ads & Conversion
-  partner_url: https://facebook.com/
-- partner_name: Attentive
-  partner: attentive
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/attentive
-  direction: third-party
-  category: Marketing
-  partner_url: https://www.attentivemobile.com/
-- partner_name: Testimonial
-  partner: null
-  partner_match: null
-  partner_candidate: zapier
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/testimonial
-  direction: third-party
-  category: Marketing
-  partner_url: https://zapier.com/testimonial.to
-- partner_name: HumbleFax
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/humblefax
-  direction: third-party
-  category: Fax
-  partner_url: https://humblefax.com/
-- partner_name: Wrangle
-  partner: wrangle
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/wrangle-io
-  direction: third-party
-  category: Team Collaboration
-  partner_url: https://www.wrangle.io/
-- partner_name: Google Docs
-  partner: google-docs
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/kustomer/integrations/google-docs
-  direction: third-party
-  category: Documents
-  partner_url: http://google.com/
 - partner_name: Shopify (own)
   partner: shopify
   partner_match: mirror
@@ -570,6 +240,366 @@ edges:
     builder: Pipedream repo (component)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: Google Business Profile
+  partner: google-business-profile
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/google-business-profile
+  direction: third-party
+  category: Google
+  partner_url: https://www.google.com/business/
+- partner_name: Heyflow
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/heyflow
+  direction: third-party
+  category: Website & App Building
+  partner_url: https://heyflow.com/
+- partner_name: Fireflies.ai
+  partner: fireflies
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/fireflies
+  direction: third-party
+  category: Transcription
+  partner_url: https://fireflies.ai/
+- partner_name: Microsoft SharePoint
+  partner: sharepoint
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/sharepoint
+  direction: third-party
+  category: Microsoft
+  partner_url: https://www.microsoft.com/en-ca/microsoft-365/sharepoint/collaboration
+- partner_name: iClosed
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/iclosed
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://iclosed.io/
+- partner_name: ShipStation
+  partner: shipstation
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/shipstation
+  direction: third-party
+  category: eCommerce
+  partner_url: http://www.shipstation.com/
+- partner_name: Jira Software Cloud
+  partner: jira
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/jira-software-cloud
+  direction: third-party
+  category: Project Management
+  partner_url: https://www.atlassian.com/software/jira
+- partner_name: Google Sheets
+  partner: google-sheets
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/google-sheets
+  direction: third-party
+  category: Google
+  partner_url: http://sheets.google.com/
+- partner_name: Acuity Scheduling
+  partner: acuity-scheduling
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/acuity-scheduling
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://acuityscheduling.com/?utm_source=zapier.com&utm_medium=referral&utm_campaign=integration-page
+- partner_name: Hostaway
+  partner: hostaway
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/hostaway
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://www.hostaway.com/
+- partner_name: Magento 2.X
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/magento-v2
+  direction: third-party
+  category: eCommerce
+  partner_url: https://magento.com/
+- partner_name: Freshcaller
+  partner: null
+  partner_match: null
+  partner_candidate: freshchat
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/freshcaller
+  direction: third-party
+  category: Phone & SMS
+  partner_url: https://www.freshworks.com/freshcaller-cloud-pbx/
+- partner_name: Autohost
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/autohost-webhooks
+  direction: third-party
+  category: Security & Identity Tools
+  partner_url: https://www.autohost.ai/
+- partner_name: Slack
+  partner: slack
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/slack
+  direction: third-party
+  category: Team Chat
+  partner_url: https://slack.com/
+- partner_name: Shopify
+  partner: shopify
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/shopify
+  direction: third-party
+  category: eCommerce
+  partner_url: https://www.shopify.com/
+- partner_name: ActiveCampaign
+  partner: activecampaign
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/activecampaign
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://www.activecampaign.com/?utm_source=unpaid_syndication_website&utm_medium=referral&utm_campaign=zapier_listing
+- partner_name: Qualtrics
+  partner: qualtrics
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/qualtrics
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://www.qualtrics.com/
+- partner_name: Emotive
+  partner: emotive
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/emotive
+  direction: third-party
+  category: eCommerce
+  partner_url: https://emotive.io/
+- partner_name: Slooce - Unlimited SMS Texting
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/slooce-unlimited-sms-texting
+  direction: third-party
+  category: Phone & SMS
+  partner_url: https://sloocetech.com/
+- partner_name: Google Forms
+  partner: google-forms
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/google-forms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: http://google.com/
+- partner_name: Wati
+  partner: wati
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/wati
+  direction: third-party
+  category: Communication
+  partner_url: https://wati.io/
+- partner_name: Gorgias
+  partner: gorgias
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/gorgias
+  direction: third-party
+  category: Customer Support
+  partner_url: https://www.gorgias.com/
+- partner_name: Wheelbase
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/wheelbase
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://www.wheelbasepro.com/
+- partner_name: HubSpot
+  partner: hubspot
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/hubspot
+  direction: third-party
+  category: Marketing Automation
+  partner_url: http://www.hubspot.com/
+- partner_name: Facebook Lead Ads (for Business admins)
+  partner: facebook-lead-ads
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/facebook-lead-ads-beta
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://facebook.com/
+- partner_name: Attentive
+  partner: attentive
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/attentive
+  direction: third-party
+  category: Marketing
+  partner_url: https://www.attentivemobile.com/
+- partner_name: Testimonial
+  partner: null
+  partner_match: null
+  partner_candidate: zapier
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/testimonial
+  direction: third-party
+  category: Marketing
+  partner_url: https://zapier.com/testimonial.to
+- partner_name: HumbleFax
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/humblefax
+  direction: third-party
+  category: Fax
+  partner_url: https://humblefax.com/
+- partner_name: Wrangle
+  partner: wrangle
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/wrangle-io
+  direction: third-party
+  category: Team Collaboration
+  partner_url: https://www.wrangle.io/
+- partner_name: Google Docs
+  partner: google-docs
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/kustomer/integrations/google-docs
+  direction: third-party
+  category: Documents
+  partner_url: http://google.com/
 templates:
 - title: Create Kustomer conversations when customers complete Mavenoid conversations
   url: https://zapier.com/apps/kustomer/integrations/mavenoid/727406/create-kustomer-conversations-when-customers-complete-mavenoid-conversations
