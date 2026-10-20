@@ -354,6 +354,30 @@
   source: edge
   status: pending-generation
   arazzo: null
+- slug: kustomer-shopify-own
+  label: Shopify (own)
+  partner: shopify
+  partner_name: Shopify (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://apps.shopify.com/kustomer
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: kustomer-talkdesk-own
+  label: Talkdesk (own)
+  partner: talkdesk
+  partner_name: Talkdesk (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://appconnect.talkdesk.com/apps/kustomer-9967a557-c4a9-4b3f-880c-12159ac23d6e
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
 - slug: kustomer-twilio-segment
   label: Twilio Segment
   partner: segment
@@ -390,16 +414,30 @@
   relationship: connector-coverage
   status: not-a-workflow
   arazzo: null
-- slug: kustomer-shopify-own
-  label: Shopify (own)
-  partner: shopify
-  partner_name: Shopify (own)
+- slug: kustomer-fivetran
+  label: Fivetran
+  partner: fivetran
+  partner_name: Fivetran
   type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://apps.shopify.com/kustomer
+  marketplace: fivetran-connectors
+  channel: elt-connector
+  evidence: https://fivetran.com/docs/connectors/applications/kustomer
   source: edge
-  relationship: platform-app
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Fivetran connectors (fivetran.com/docs/connectors, docs-sitemap.xml + Partner-Built program)
+    spec_file: null
+    role: elt-connector:fivetran
+    registered_name: Kustomer
+    matched_domain: kustomer.com
+    matched_by: domain
+    detected_by: sweep-data-integration.py
+    detected: '2026-10-18'
+    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
+    connector_paths:
+    - connectors/applications/kustomer
+    vendor_link: https://www.kustomer.com/
+    builder: Fivetran
   status: not-a-workflow
   arazzo: null
 - slug: kustomer-zapier
@@ -434,7 +472,7 @@
   type: marketplace
   marketplace: pipedream-components
   channel: open-source-node
-  evidence: https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/kustomer
+  evidence: https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/kustomer
   source: edge
   relationship: ipaas-bridge
   contract_reference:
@@ -451,43 +489,5 @@
     actions: true
     sources: true
     builder: Pipedream repo (component)
-  status: not-a-workflow
-  arazzo: null
-- slug: kustomer-fivetran
-  label: Fivetran
-  partner: fivetran
-  partner_name: Fivetran
-  type: marketplace
-  marketplace: fivetran-connectors
-  channel: elt-connector
-  evidence: https://fivetran.com/docs/connectors/applications/kustomer
-  source: edge
-  relationship: ipaas-bridge
-  contract_reference:
-    register: Fivetran connectors (fivetran.com/docs/connectors, docs-sitemap.xml + Partner-Built program)
-    spec_file: null
-    role: elt-connector:fivetran
-    registered_name: Kustomer
-    matched_domain: kustomer.com
-    matched_by: domain
-    detected_by: sweep-data-integration.py
-    detected: '2026-10-18'
-    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
-    connector_paths:
-    - connectors/applications/kustomer
-    vendor_link: https://www.kustomer.com/
-    builder: Fivetran
-  status: not-a-workflow
-  arazzo: null
-- slug: kustomer-talkdesk-own
-  label: Talkdesk (own)
-  partner: talkdesk
-  partner_name: Talkdesk (own)
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://appconnect.talkdesk.com/apps/kustomer-9967a557-c4a9-4b3f-880c-12159ac23d6e
-  source: edge
-  relationship: platform-app
   status: not-a-workflow
   arazzo: null
