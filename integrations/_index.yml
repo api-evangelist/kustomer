@@ -523,3 +523,31 @@
   relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
+- slug: kustomer-battery-ventures
+  label: Battery Ventures
+  partner: battery-ventures
+  partner_name: Battery Ventures
+  category: vc portfolio participation
+  type: register
+  channel: standard-directory
+  evidence: https://www.battery.com/company/kustomer/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: Battery Ventures companies (battery.com/company/, the page's own admin-ajax list + company pages)
+    standard: null
+    spec_file: null
+    role: vc-portfolio-company
+    registered_name: Kustomer
+    register_id: https://www.battery.com/company/kustomer/
+    register_country: New York, New York
+    register_website: http://www.kustomer.com/
+    matched_domain: kustomer.com
+    matched_by: domain
+    signal_note: 'participation only: the venture firm''s own published portfolio lists the company (investment);
+      an ownership and participation record, not conformance or certification'
+    detected_by: sweep-vc-portfolios.py
+    detected: '2026-10-21'
+    status: Acquired by Meta; Active
+  status: not-a-workflow
+  arazzo: null
