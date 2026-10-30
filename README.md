@@ -1,4 +1,4 @@
-# Kustomer (kustomer)
+# Kustomer
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,56 +66,152 @@
 
 Kustomer is an AI-powered customer service CRM that unifies conversations, customer data, automation, and reporting across channels.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/kustomer/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/kustomer/refs/heads/main/apis.yml)
+**Areas:** Customer Service · CRM · Help Desk · Messaging · Artificial Intelligence · Conversational AI
 
-## Tags
+## Kustomer on APIs.io
 
-- Customer Service
-- CRM
-- Helpdesk
-- Messaging
-- AI
+Everything profiled for Kustomer is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/kustomer/](https://apis.io/providers/kustomer/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (2)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-30
+- [Kustomer Conversations API](https://apis.io/apis/kustomer/kustomer-conversations-api/) — Conversation threads with customers
+- [Kustomer Customers API](https://apis.io/apis/kustomer/kustomer-customers-api/) — Customer records in Kustomer
 
-## APIs
+### Published properties
 
-### Kustomer REST API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Kustomer REST API for customers, conversations, messages, KObjects, queues, teams, users, workflows, search, and analytics. Supports v1 and v2 endpoints with bearer-token authentication.
+#### AsyncAPI (1)
 
-- **Human URL:** [https://developer.kustomer.com/kustomer-api-docs/reference](https://developer.kustomer.com/kustomer-api-docs/reference)
-- **Base URL:** `https://api.kustomerapp.com`
+Event-driven and webhook contracts.
 
-#### Tags
+- [Kustomer Outbound Webhook Events](https://apis.io/asyncapis/kustomer/kustomer-webhooks-asyncapi/)
 
-- Customer Service
-- CRM
-- REST
+#### Event channels (10)
 
-#### Properties
+Individual events and webhooks the provider emits.
 
-- [Documentation](https://developer.kustomer.com/kustomer-api-docs/reference)
-- [Authentication](https://developer.kustomer.com/kustomer-api-docs/reference/authentication)
-- [OpenAPI](openapi/kustomer-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/kustomer.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/kustomer.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [AsyncAPI](asyncapi/kustomer-webhooks-asyncapi.yml) — [AsyncAPI Specification](https://www.asyncapi.com/docs/reference/specification/latest)
+- [conversation.create](https://apis.io/channels/kustomer/conversation-create/)
+- [conversation.update](https://apis.io/channels/kustomer/conversation-update/)
+- [customer.create](https://apis.io/channels/kustomer/customer-create/)
+- [customer.update](https://apis.io/channels/kustomer/customer-update/)
+- [message.create](https://apis.io/channels/kustomer/message-create/)
+- [message.update](https://apis.io/channels/kustomer/message-update/)
+- [team.create](https://apis.io/channels/kustomer/team-create/)
+- [team.update](https://apis.io/channels/kustomer/team-update/)
+- [user.create](https://apis.io/channels/kustomer/user-create/)
+- [user.update](https://apis.io/channels/kustomer/user-update/)
 
-## Common Properties
+#### GraphQL (1)
 
-- [GitHub Organization](https://github.com/kustomer)
-- [LinkedIn](https://www.linkedin.com/company/kustomer)
+GraphQL schemas.
+
+- [Moved to /providers/kustomer/](https://apis.io/graphqls/kustomer/kustomer-graphql/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Kustomer Agentic Access](https://apis.io/agentic-access/kustomer/kustomer-agentic-access/)
+
+#### Collections (3)
+
+Postman and Open Collection request collections.
+
+- [Kustomer REST API](https://apis.io/collections/kustomer/open-kustomer/)
+- [Kustomer REST Conversations API](https://apis.io/collections/kustomer/open-kustomer-conversations-api/)
+- [Kustomer REST Conversations Customers API](https://apis.io/collections/kustomer/open-kustomer-customers-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Kustomer — asyncapi rules](https://apis.io/rules/kustomer/kustomer-asyncapi-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Kustomer Authentication](https://apis.io/security/kustomer/kustomer-authentication/)
+- [Kustomer Domain Security](https://apis.io/security/kustomer/kustomer-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Kustomer Plans Pricing](https://apis.io/plans/kustomer/kustomer-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Kustomer Rate Limits](https://apis.io/rate-limits/kustomer/kustomer-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Kustomer Finops](https://apis.io/finops/kustomer/kustomer-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.kustomer.com/)
 - [Documentation](https://developer.kustomer.com/kustomer-api-docs/reference)
-- [Plans](plans/kustomer-plans-pricing.yml)
-- [Rate Limits](rate-limits/kustomer-rate-limits.yml)
-- [Fin Ops](finops/kustomer-finops.yml)
+- [Pricing](https://www.kustomer.com/pricing/)
+- [Blog](https://www.kustomer.com/resources/blog/)
+- [GitHub](https://github.com/kustomer)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 28.8** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 58.8 |
+| Contract governance | 13.6 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 13.1 |
+| Access clarity | 10.5 |
+
+**Agent readiness 19.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.9** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/kustomer/](https://apis.io/providers/kustomer/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Kustomer: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/kustomer/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
